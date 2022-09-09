@@ -1,0 +1,17 @@
+---
+title: "GSoC 2022 Report"
+page-layout: full
+title-block-banner: true
+website:
+  twitter-card:
+    creator: "@iamsaradindu"
+  open-graph:
+    locale: es_ES
+    site-name: Quarto
+  theme:
+    light: flatly
+    dark: darkly
+  favicon: assets/icon.png
+---
+
+# Demo
