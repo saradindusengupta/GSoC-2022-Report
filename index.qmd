@@ -1,5 +1,7 @@
 ---
-title: "GSoC 2022 Report"
+title: "Summarizing Google Summer of Code - 2022"
+author: "Saradindu Sengupta"
+date: 09/11/2022
 page-layout: full
 title-block-banner: true
 website:
@@ -12,6 +14,103 @@ website:
     light: flatly
     dark: darkly
   favicon: assets/icon.png
+bibliography: references.bib
 ---
 
-# Demo
+It is already time for the final submission for this year's GSoC where I was working with The R project of Statistical Computing for the last 3 months and this is the time I ponder over my accomplishments over the period.
+
+# Motivation
+
+Since the idea-lists were announced for GSoC, 2022 I was particularly looking for projects which complement my area of expertise and skill-sets. The project idea to understand calendar seasonality specific to Indian calendar systems with ['VedicDateTime (Part A)'](https://github.com/rstats-gsoc/gsoc2022/wiki/VedicDateTime-%28Part-A%29 "VedicDateTime (Part A)") was very interesting to me, foremost of the reasons being by past experience with work on time-series forecasting and how seasonality changes and alters forecasting over a long period of time.
+
+My experience in working on near real-time data-stream for time-series based forecasting exposed a couple of doubts regarding handling time itself while doing any forecasting or even segmentation based on-trend. Using a separate calendar system to overcome the issues of calendar seasonality would give some understanding of the drawback of the current method of mentioning the time component.
+
+Since I never worked with Indian calendar system earlier, especially on a analysis domain, it was quite challenging to see through the project and decide on convergence of the topic.
+
+During the evaluation phase, I only applied to this project and submitted [evaluation](https://github.com/saradindusengupta/vedicDateTime-GSoC-2022). The initial background research conducted during that period helped me gain a fair bit of knowledge regarding Indian calendar system and its various concepts, which itself is a separate topic.
+
+# Challenges
+
+One of the primary challenges was understanding Indian calendar system. Unlike a Gregorian calendar system which is a Solar calendar system meaning components of time are decided and maintained by measuring the movement of sun, Indian calendar system is a luni-solar calendar system meaning the day, month and year component of time is based on movement by the sun and the moon.
+
+# Journey
+
+## Background knowledge
+
+As with the nature of the topic, I had to delve right into understanding Vedic calendar system[^1] and its various sub-parts as well. How sun's and moon's position changes month, year and how moon's phase determines lunar months were the most important part.
+
+[^1]: [Drik Panchang](https://www.drikpanchang.com)
+
+## Package development
+
+### Initial development
+
+With the basic understanding of the calendar system and with the help of other R libraries [@swephR], built a working version of R functions which can convert a Gregorian calendar date to an equivalent Vedic calendar component.
+
+### Re-factoring
+
+After the initial development of basic functions, a significant time went into re-factoring and debugging the existing codebase.
+
+## Preparation for CRAN
+
+### Unit-testing
+
+Since from the start, the intention was to publish the package to CRAN as there remains to package in R to handle Vedic calendar system. In that regard, based on the [GSoC proposal](https://drive.google.com/file/d/1kxFlbiVxYO4FRjCyTw7PnUNbmbgdK7H8/view?usp=sharing), almost 70% [test coverage](https://app.codecov.io/gh/saradindusengupta/VedicDateTime) were achieved.
+
+### Documentation
+
+#### Function Description
+
+All of the library functions were documented with [roxygen2](https://cran.r-project.org/web/packages/roxygen2/) .
+
+#### Vignettes
+
+Vignettes and supporting documentations were added to make the library much more useful and understandable.
+
+-   [Associated PR](https://github.com/prajwalkpatil/VedicDateTime/pull/2)
+
+## Publishing to CRAN
+
+### Testing with [`rhub`](https://cran.r-project.org/web/packages/rhub/index.html)
+
+In order to publish to CRAN with minimal NOTES or WARNINGS, thorough testing on 3 different platforms \[`ubuntu-gcc-release`, `windows-x86_64-release`, `macos-m1-bigsur-release` \] were performed and the result were added.
+
+-   [Associated PR](https://github.com/prajwalkpatil/VedicDateTime/pull/2)￼￼
+
+-   [`cran-comments.md`](https://github.com/prajwalkpatil/VedicDateTime/blob/main/cran-comments.md)
+
+### CRAN Submission
+
+    Version: 0.1.0
+    Date: 2022-09-09 13:31:35 UTC
+    SHA: ff82424b8e1f0805581f934a993fe5cec4b27bc2
+
+## A comparative analysis of calendar seasonality
+
+As the primary intention of the project was to understand calender seasonality between solar and luni-solar calendar systems, I conducted a comparative analysis taking into account the earlier analysis performed [@bokde2021a] to understand any correlation, if any. Details of the study can be found in the attached Github repository.
+
+-   [Understanding Effects of calendar System](https://github.com/saradindusengupta/understanding-effects-of-calendar-system){.github}
+
+# Links to my work
+
+## Pull requests on GitHub
+
+-   [GSoC-2022: VedicDateTime(Part A) - CRAN submission for package](https://github.com/prajwalkpatil/VedicDateTime/pull/2)
+
+-   [GSoC-2022: VedicDateTime(Part A) - Added package icon to documentation](https://github.com/prajwalkpatil/VedicDateTime/pull/4)
+
+-   [GSoC-2022: VedicDateTime(Part A) - Bug fix: CRAN Publish](https://github.com/prajwalkpatil/VedicDateTime/pull/5)
+
+-   [GSoC-2022: VedicDateTime(Part A) - Publishing to CRAN](https://github.com/prajwalkpatil/VedicDateTime/pull/6 "GSoC-2022: VedicDateTime(Part A) - Publishing to CRAN")
+
+## GitHub Repository
+
+-   [Package: GitHub](https://github.com/saradindusengupta/VedicDateTime "Package: GitHub")
+
+-   [Comparative case study](https://github.com/saradindusengupta/understanding-effects-of-calendar-system)
+
+# Future work
+
+I intend to finish the comparative case study conclusively adding comparison across different calendar systems as well as differrent domain as well. I also intend to publish my finding from the current comparative analysis.
+
+# 

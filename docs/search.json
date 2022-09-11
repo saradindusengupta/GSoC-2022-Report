@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "",
+    "text": "It is already time for the final submission for this year’s GSoC where I was working with The R project of Statistical Computing for the last 3 months and this is the time I ponder over my accomplishments over the period."
+  },
+  {
+    "objectID": "index.html#background-knowledge",
+    "href": "index.html#background-knowledge",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "Background knowledge",
+    "text": "Background knowledge\nAs with the nature of the topic, I had to delve right into understanding Vedic calendar system1 and its various sub-parts as well. How sun’s and moon’s position changes month, year and how moon’s phase determines lunar months were the most important part."
+  },
+  {
+    "objectID": "index.html#package-development",
+    "href": "index.html#package-development",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "Package development",
+    "text": "Package development\n\nInitial development\nWith the basic understanding of the calendar system and with the help of other R libraries (Stubner et al. 2019), built a working version of R functions which can convert a Gregorian calendar date to an equivalent Vedic calendar component.\n\n\nRe-factoring\nAfter the initial development of basic functions, a significant time went into re-factoring and debugging the existing codebase."
+  },
+  {
+    "objectID": "index.html#preparation-for-cran",
+    "href": "index.html#preparation-for-cran",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "Preparation for CRAN",
+    "text": "Preparation for CRAN\n\nUnit-testing\nSince from the start, the intention was to publish the package to CRAN as there remains to package in R to handle Vedic calendar system. In that regard, based on the GSoC proposal, almost 70% test coverage were achieved.\n\n\nDocumentation\n\nFunction Description\nAll of the library functions were documented with roxygen2 .\n\n\nVignettes\nVignettes and supporting documentations were added to make the library much more useful and understandable.\n\nAssociated PR"
+  },
+  {
+    "objectID": "index.html#publishing-to-cran",
+    "href": "index.html#publishing-to-cran",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "Publishing to CRAN",
+    "text": "Publishing to CRAN\n\nTesting with rhub\nIn order to publish to CRAN with minimal NOTES or WARNINGS, thorough testing on 3 different platforms [ubuntu-gcc-release, windows-x86_64-release, macos-m1-bigsur-release ] were performed and the result were added.\n\nAssociated PR￼￼\ncran-comments.md\n\n\n\nCRAN Submission\nVersion: 0.1.0\nDate: 2022-09-09 13:31:35 UTC\nSHA: ff82424b8e1f0805581f934a993fe5cec4b27bc2"
+  },
+  {
+    "objectID": "index.html#a-comparative-analysis-of-calendar-seasonality",
+    "href": "index.html#a-comparative-analysis-of-calendar-seasonality",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "A comparative analysis of calendar seasonality",
+    "text": "A comparative analysis of calendar seasonality\nAs the primary intention of the project was to understand calender seasonality between solar and luni-solar calendar systems, I conducted a comparative analysis taking into account the earlier analysis performed (Bokde 2021) to understand any correlation, if any. Details of the study can be found in the attached Github repository.\n\nUnderstanding Effects of calendar System"
+  },
+  {
+    "objectID": "index.html#pull-requests-on-github",
+    "href": "index.html#pull-requests-on-github",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "Pull requests on GitHub",
+    "text": "Pull requests on GitHub\n\nGSoC-2022: VedicDateTime(Part A) - CRAN submission for package\nGSoC-2022: VedicDateTime(Part A) - Added package icon to documentation\nGSoC-2022: VedicDateTime(Part A) - Bug fix: CRAN Publish\nGSoC-2022: VedicDateTime(Part A) - Publishing to CRAN"
+  },
+  {
+    "objectID": "index.html#github-repository",
+    "href": "index.html#github-repository",
+    "title": "Summarizing Google Summer of Code - 2022",
+    "section": "GitHub Repository",
+    "text": "GitHub Repository\n\nPackage: GitHub\nComparative case study"
+  }
+]

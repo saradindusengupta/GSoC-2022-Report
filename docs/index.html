@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Saradindu Sengupta">
+<meta name="dcterms.date" content="2022-09-11">
 
-<title>GSoC-2022 Report - GSoC 2022 Report</title>
+<title>GSoC-2022 Report - Summarizing Google Summer of Code - 2022</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +17,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -46,10 +67,12 @@ ul.task-list{list-style: none;}
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="GSoC-2022 Report - GSoC 2022 Report">
+<meta property="og:title" content="GSoC-2022 Report - Summarizing Google Summer of Code - 2022">
+<meta property="og:description" content="It is already time for the final submission for this year’s GSoC where I was working with The R project of Statistical Computing for the last 3 months and this is the time I ponder over my…">
 <meta property="og:site-name" content="Quarto">
 <meta property="og:locale" content="es_ES">
-<meta name="twitter:title" content="GSoC-2022 Report - GSoC 2022 Report">
+<meta name="twitter:title" content="GSoC-2022 Report - Summarizing Google Summer of Code - 2022">
+<meta name="twitter:description" content="It is already time for the final submission for this year’s GSoC where I was working with The R project of Statistical Computing for the last 3 months and this is the time I ponder over my…">
 <meta name="twitter:creator" content="@iamsaradindu">
 <meta name="twitter:card" content="summary">
 </head>
@@ -92,14 +115,26 @@ ul.task-list{list-style: none;}
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page">
-      <h1 class="title">GSoC 2022 Report</h1>
+      <h1 class="title">Summarizing Google Summer of Code - 2022</h1>
                       </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Saradindu Sengupta </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">September 11, 2022</p>
+      </div>
+    </div>
       
     </div>
     
@@ -114,13 +149,125 @@ ul.task-list{list-style: none;}
 
 
 
-<section id="demo" class="level1">
-<h1>Demo</h1>
+<p>It is already time for the final submission for this year’s GSoC where I was working with The R project of Statistical Computing for the last 3 months and this is the time I ponder over my accomplishments over the period.</p>
+<section id="motivation" class="level1">
+<h1>Motivation</h1>
+<p>Since the idea-lists were announced for GSoC, 2022 I was particularly looking for projects which complement my area of expertise and skill-sets. The project idea to understand calendar seasonality specific to Indian calendar systems with <a href="https://github.com/rstats-gsoc/gsoc2022/wiki/VedicDateTime-%28Part-A%29" title="VedicDateTime (Part A)">‘VedicDateTime (Part A)’</a> was very interesting to me, foremost of the reasons being by past experience with work on time-series forecasting and how seasonality changes and alters forecasting over a long period of time.</p>
+<p>My experience in working on near real-time data-stream for time-series based forecasting exposed a couple of doubts regarding handling time itself while doing any forecasting or even segmentation based on-trend. Using a separate calendar system to overcome the issues of calendar seasonality would give some understanding of the drawback of the current method of mentioning the time component.</p>
+<p>Since I never worked with Indian calendar system earlier, especially on a analysis domain, it was quite challenging to see through the project and decide on convergence of the topic.</p>
+<p>During the evaluation phase, I only applied to this project and submitted <a href="https://github.com/saradindusengupta/vedicDateTime-GSoC-2022">evaluation</a>. The initial background research conducted during that period helped me gain a fair bit of knowledge regarding Indian calendar system and its various concepts, which itself is a separate topic.</p>
+</section>
+<section id="challenges" class="level1">
+<h1>Challenges</h1>
+<p>One of the primary challenges was understanding Indian calendar system. Unlike a Gregorian calendar system which is a Solar calendar system meaning components of time are decided and maintained by measuring the movement of sun, Indian calendar system is a luni-solar calendar system meaning the day, month and year component of time is based on movement by the sun and the moon.</p>
+</section>
+<section id="journey" class="level1">
+<h1>Journey</h1>
+<section id="background-knowledge" class="level2">
+<h2 class="anchored" data-anchor-id="background-knowledge">Background knowledge</h2>
+<p>As with the nature of the topic, I had to delve right into understanding Vedic calendar system<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and its various sub-parts as well. How sun’s and moon’s position changes month, year and how moon’s phase determines lunar months were the most important part.</p>
+</section>
+<section id="package-development" class="level2">
+<h2 class="anchored" data-anchor-id="package-development">Package development</h2>
+<section id="initial-development" class="level3">
+<h3 class="anchored" data-anchor-id="initial-development">Initial development</h3>
+<p>With the basic understanding of the calendar system and with the help of other R libraries <span class="citation" data-cites="swephR">(<a href="#ref-swephR" role="doc-biblioref">Stubner et al. 2019</a>)</span>, built a working version of R functions which can convert a Gregorian calendar date to an equivalent Vedic calendar component.</p>
+</section>
+<section id="re-factoring" class="level3">
+<h3 class="anchored" data-anchor-id="re-factoring">Re-factoring</h3>
+<p>After the initial development of basic functions, a significant time went into re-factoring and debugging the existing codebase.</p>
+</section>
+</section>
+<section id="preparation-for-cran" class="level2">
+<h2 class="anchored" data-anchor-id="preparation-for-cran">Preparation for CRAN</h2>
+<section id="unit-testing" class="level3">
+<h3 class="anchored" data-anchor-id="unit-testing">Unit-testing</h3>
+<p>Since from the start, the intention was to publish the package to CRAN as there remains to package in R to handle Vedic calendar system. In that regard, based on the <a href="https://drive.google.com/file/d/1kxFlbiVxYO4FRjCyTw7PnUNbmbgdK7H8/view?usp=sharing">GSoC proposal</a>, almost 70% <a href="https://app.codecov.io/gh/saradindusengupta/VedicDateTime">test coverage</a> were achieved.</p>
+</section>
+<section id="documentation" class="level3">
+<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
+<section id="function-description" class="level4">
+<h4 class="anchored" data-anchor-id="function-description">Function Description</h4>
+<p>All of the library functions were documented with <a href="https://cran.r-project.org/web/packages/roxygen2/">roxygen2</a> .</p>
+</section>
+<section id="vignettes" class="level4">
+<h4 class="anchored" data-anchor-id="vignettes">Vignettes</h4>
+<p>Vignettes and supporting documentations were added to make the library much more useful and understandable.</p>
+<ul>
+<li><a href="https://github.com/prajwalkpatil/VedicDateTime/pull/2">Associated PR</a></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="publishing-to-cran" class="level2">
+<h2 class="anchored" data-anchor-id="publishing-to-cran">Publishing to CRAN</h2>
+<section id="testing-with-rhub" class="level3">
+<h3 class="anchored" data-anchor-id="testing-with-rhub">Testing with <a href="https://cran.r-project.org/web/packages/rhub/index.html"><code>rhub</code></a></h3>
+<p>In order to publish to CRAN with minimal NOTES or WARNINGS, thorough testing on 3 different platforms [<code>ubuntu-gcc-release</code>, <code>windows-x86_64-release</code>, <code>macos-m1-bigsur-release</code> ] were performed and the result were added.</p>
+<ul>
+<li><p><a href="https://github.com/prajwalkpatil/VedicDateTime/pull/2">Associated PR</a>￼￼</p></li>
+<li><p><a href="https://github.com/prajwalkpatil/VedicDateTime/blob/main/cran-comments.md"><code>cran-comments.md</code></a></p></li>
+</ul>
+</section>
+<section id="cran-submission" class="level3">
+<h3 class="anchored" data-anchor-id="cran-submission">CRAN Submission</h3>
+<pre><code>Version: 0.1.0
+Date: 2022-09-09 13:31:35 UTC
+SHA: ff82424b8e1f0805581f934a993fe5cec4b27bc2</code></pre>
+</section>
+</section>
+<section id="a-comparative-analysis-of-calendar-seasonality" class="level2">
+<h2 class="anchored" data-anchor-id="a-comparative-analysis-of-calendar-seasonality">A comparative analysis of calendar seasonality</h2>
+<p>As the primary intention of the project was to understand calender seasonality between solar and luni-solar calendar systems, I conducted a comparative analysis taking into account the earlier analysis performed <span class="citation" data-cites="bokde2021a">(<a href="#ref-bokde2021a" role="doc-biblioref">Bokde 2021</a>)</span> to understand any correlation, if any. Details of the study can be found in the attached Github repository.</p>
+<ul>
+<li><a href="https://github.com/saradindusengupta/understanding-effects-of-calendar-system" class="github">Understanding Effects of calendar System</a></li>
+</ul>
+</section>
+</section>
+<section id="links-to-my-work" class="level1">
+<h1>Links to my work</h1>
+<section id="pull-requests-on-github" class="level2">
+<h2 class="anchored" data-anchor-id="pull-requests-on-github">Pull requests on GitHub</h2>
+<ul>
+<li><p><a href="https://github.com/prajwalkpatil/VedicDateTime/pull/2">GSoC-2022: VedicDateTime(Part A) - CRAN submission for package</a></p></li>
+<li><p><a href="https://github.com/prajwalkpatil/VedicDateTime/pull/4">GSoC-2022: VedicDateTime(Part A) - Added package icon to documentation</a></p></li>
+<li><p><a href="https://github.com/prajwalkpatil/VedicDateTime/pull/5">GSoC-2022: VedicDateTime(Part A) - Bug fix: CRAN Publish</a></p></li>
+<li><p><a href="https://github.com/prajwalkpatil/VedicDateTime/pull/6" title="GSoC-2022: VedicDateTime(Part A) - Publishing to CRAN">GSoC-2022: VedicDateTime(Part A) - Publishing to CRAN</a></p></li>
+</ul>
+</section>
+<section id="github-repository" class="level2">
+<h2 class="anchored" data-anchor-id="github-repository">GitHub Repository</h2>
+<ul>
+<li><p><a href="https://github.com/saradindusengupta/VedicDateTime" title="Package: GitHub">Package: GitHub</a></p></li>
+<li><p><a href="https://github.com/saradindusengupta/understanding-effects-of-calendar-system">Comparative case study</a></p></li>
+</ul>
+</section>
+</section>
+<section id="future-work" class="level1">
+<h1>Future work</h1>
+<p>I intend to finish the comparative case study conclusively adding comparison across different calendar systems as well as differrent domain as well. I also intend to publish my finding from the current comparative analysis.</p>
+</section>
+<section id="section" class="level1">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-bokde2021a" class="csl-entry" role="doc-biblioentry">
+Bokde, Neeraj Dhanraj. 2021. <span>“Natural Time-Series Analysis and Vedic Hindu Calendar System.”</span> <a href="https://doi.org/10.48550/ARXIV.2111.03441">https://doi.org/10.48550/ARXIV.2111.03441</a>.
+</div>
+<div id="ref-swephR" class="csl-entry" role="doc-biblioentry">
+Stubner, Ralf, Victor Reijs, Authors, and copyright holder of the Swiss Ephemeris. 2019. <span>“swephR: High Precision Swiss Ephemeris.”</span> <a href="https://CRAN.R-project.org/package=swephR">https://CRAN.R-project.org/package=swephR</a>.
+</div>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p><a href="https://www.drikpanchang.com">Drik Panchang</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
