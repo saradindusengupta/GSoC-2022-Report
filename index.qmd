@@ -81,9 +81,13 @@ In order to publish to CRAN with minimal NOTES or WARNINGS, thorough testing on 
 
 ### CRAN Submission
 
-    Version: 0.1.0
-    Date: 2022-09-09 13:31:35 UTC
-    SHA: ff82424b8e1f0805581f934a993fe5cec4b27bc2
+    Version: 0.1.1
+    Date: 2022-09-14 09:27:14 UTC
+    SHA: b4853ae3e1b63fb759d207c968a3ef172e26aba8
+
+### Published to CRAN 
+
+[VedicDateTime-v0.1.1](https://cran.r-project.org/web/packages/VedicDateTime/index.html)
 
 ## A comparative analysis of calendar seasonality
 
@@ -103,9 +107,15 @@ As the primary intention of the project was to understand calender seasonality b
 
 -   [GSoC-2022: VedicDateTime(Part A) - Publishing to CRAN](https://github.com/prajwalkpatil/VedicDateTime/pull/6 "GSoC-2022: VedicDateTime(Part A) - Publishing to CRAN")
 
+-   [GSoC-2022: VedicDateTime(Part A): CRAN re-submission](https://github.com/prajwalkpatil/VedicDateTime/pull/7)
+
+-   [GSoC-2022: VedicDateTime(Part A): Published to CRAN](https://github.com/prajwalkpatil/VedicDateTime/pull/8)
+
 ## GitHub Repository
 
 -   [Package: GitHub](https://github.com/saradindusengupta/VedicDateTime "Package: GitHub")
+
+-   [Package: CRAN (v0.1.1)](https://cran.r-project.org/web/packages/VedicDateTime/index.html)
 
 -   [Comparative case study](https://github.com/saradindusengupta/understanding-effects-of-calendar-system)
 
